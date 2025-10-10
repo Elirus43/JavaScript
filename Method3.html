@@ -1,0 +1,21 @@
+<html>
+    <script>
+        let arr = [2, 34, 5, 8];
+        let index = arr.indexOf(5);
+        console.log( 'Index of 5', index);
+
+        let item = arr.find(item => item % 2 != 0);
+        console.log( 'First ODD ', item);
+
+        index = arr.findIndex ( item => item % 2 != 0);
+        console.log( 'Index ', index);
+
+        const isOdd = item => item % 2 != 0;
+        let item1 = arr.find(isOdd);
+        console.log( 'Item1 ', item1);
+
+        console.log('isOdd.every ', arr.every(isOdd));
+
+        console.log('isOdd.some ',arr.some(isOdd) );
+    </script>
+</html>

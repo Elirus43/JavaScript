@@ -1,0 +1,41 @@
+<html>
+    <script>
+
+        const MayBe = value => ({
+            value,
+            valueOf: () => value,
+            map(fn)
+            {
+                return this.isNothing() ? MayBe.of(null) : MayBe.of(fn(value));
+            },
+            isNothing: () => value == undefined || value == null
+        });
+        MayBe.of = MayBe;
+
+        let roomA = {
+            stu1: {
+                name: 'Ted'
+            },
+            stu2: {
+                name: 'Berney',
+                hisFri: 'stu1'
+            },
+            stu3: {
+                name: 'Marshall',
+                hisFri: 'stu2'
+            }
+        };
+
+        function getFriendName (stuId)
+        {
+            return MayBe.of(stuId)
+                        .map(stuId => roomA[stuId])
+                        .map(stuDetail => stuDetail.hisFri)
+                        .map(checkFri => roomA[checkFri])
+                        .map(friend => friend.name);
+        }
+
+        console.log('Friend name of Stu3 ', getFriendName('stu3'));
+
+    </script>
+</html>

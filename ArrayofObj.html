@@ -1,0 +1,59 @@
+<html>
+    <script>
+        let students = [        //ArrayofObject
+            {
+                name : 'A',
+                age : 12,
+                phones : [2343, 23242, 2656]   //Object of Array
+            },
+            {
+                name : 'B',
+                age : 32,
+            },
+            {
+                name : 'C',
+                age : 41,
+            }
+        ];
+        console.log('students[1] ', students[1]);
+        console.log('students[1].age ', students[1].age); // --> Array Read
+        console.log('students[0].phones ', students[0].phones);   //Array Inside Object
+
+        console.log( 'Students.length ', students.length);
+        students[4] = {         //Array Write
+            name : 'D',
+            age : 29,
+        };
+        console.log( 'Students.length ', students.length);
+        console.log('Students ', students);
+
+        students.length = 2;
+        console.log( 'Students.length ', students.length)
+        console.log('Students ', students);
+
+        let test = [1, 2,34, 534, 'elirus', false, ];
+        console.log( 'Test ', test);
+        console.log(test.length);
+        console.log(test[6]);
+
+        let arr = [10, 20, 30, 'hello, false'];
+        arr[-1] = 100;
+        console.log('Arr ', arr);
+        arr['age'] = 'Something';
+        console.log('Arr ', arr);
+        console.log( 'Arr.length ',arr.length);
+
+        arr['1'] = '200';
+        console.log('Arr ', arr);
+
+        let something;
+        arr[something] = 'Hello';
+        console.log( 'Arr ', arr);
+
+        arr[9] = 300;
+        arr[0.1] = 'Zayar';
+        console.log('Arr ', arr);
+        
+
+    </script>
+</html>

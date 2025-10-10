@@ -1,0 +1,56 @@
+<html>
+    <script>
+
+        let arr = [1, 10, 114, 20, 24];
+        arr.sort( (a, b) => a - b);
+        console.log( 'Arr ', arr);
+
+        let students = [
+        {
+                name : 'Aye San',
+                gender : 'Female',
+                age : 20,
+            },
+            {
+                name : 'Nwar Gyi',
+                gender : 'Male',
+                age : 21.
+            },
+            {
+                name : 'Ma Ei',
+                gender : 'Female',
+                age : 20,
+            },
+            {
+                name : 'Ko Pu',
+                gender : 'Male',
+                age : 22,
+            },
+            {
+                name : 'Chizuru',
+                gender : 'Female',
+                age : 19,
+            }
+        ];
+        students.sort( (a, b) => a.age - b.age);
+        console.log( 'Students ', students);
+
+        students.sort( (a, b) => {
+            if(a.age-b.age == 0)
+            {
+                return a.name.localeCompare(b.name);
+            }
+            else
+            {
+                return a.age-b.age;
+            }
+        });
+        console.log( 'Students ', students);
+
+        let arr1 = [1, 3, 5, 7, 9];
+        console.log( 'ArrtoString ', arr1.toString( ));
+        console.log( 'Join ', arr1.join ( ';') );
+
+        console.log( 'Arr1.IsArray ', Array.isArray(arr1));
+    </script>
+</html>

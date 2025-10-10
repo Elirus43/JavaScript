@@ -1,0 +1,27 @@
+<html>
+    <script>
+
+        function greet( a, message = 'Hello')
+        {
+            console.log(message, 'a ', a);
+            console.log('Morning');
+        }
+        greet(30);
+        greet('Hi ', 15);
+
+        function max (first, ...numbers)
+        {
+            console.log( 'isArray ', Array.isArray(numbers));
+            console.log( 'Numbers ', numbers);
+            return Math.max(...numbers)
+        }
+        console.log( 'Max ', max ( 10, 5, 9));
+
+        function items (a, ...integer)
+        {
+            console.log('Intergers ', integer);
+            return Math.min(...integer)
+        }
+        console.log( 'Items ', items(1, 9, 4, 8, 0));
+    </script>
+</html>

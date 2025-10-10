@@ -1,0 +1,28 @@
+<html>
+    <script>
+            factorial.cache = { };
+            function factorial(n)
+            {
+                if (factorial.cache[n])
+                {
+                    return factorial.cache[n]
+                }
+                else 
+                {
+                    console.log( 'Compute Fac ', n);
+                    let result = 1;
+                    for (let i = 1; i <= n; i++)
+                {
+                    result *= i;
+                }
+                    factorial.cache[n] = result;
+                    return result;
+                }
+                
+            }
+            console.log( 'Factorial 4 ',factorial(4) );
+            console.log( 'Factorial 5 ', factorial(5) );
+            console.log( 'Factorial 4 ',factorial(4) );
+
+    </script>
+</html>

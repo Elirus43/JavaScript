@@ -1,0 +1,53 @@
+<html>
+    <script>
+        function constfunc(v)
+        {
+            return () => v
+        }
+        console.log('ConstFunc(10) ',constfunc(10)());
+
+        // Functional Programming 
+        // Once how many times we call function we want to run function once
+       /* let done = false;       //Imperative paradigm 
+        function payment ()
+        {
+            if(!done)
+            {
+                done = true;
+                console.log('Payment');
+            }
+        } */
+       
+       /* payment();
+        payment();
+
+        function another()
+        {
+            console.log('Another');
+        }
+        another();
+        another();  */
+
+        function payment (card)
+        {
+            console.log('Payment',card);
+        }
+
+        function once(fn)
+        {
+            let done = false;
+            return function(...rest)
+            {
+                if(!done)
+                {
+                    done = true;
+                    return fn(...rest)
+                }
+            }
+        }
+        payment = once(payment);
+        payment('A');
+        payment();
+
+    </script>
+</html>

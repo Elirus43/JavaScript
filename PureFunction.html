@@ -1,0 +1,35 @@
+<html>
+    <script>
+        //Logging
+        function payment ()
+        {
+            console.log('Payment')
+            return 'success'
+        }
+        function another ()
+        {
+            console.log('Another');
+            return 'good'
+        }
+        
+        //HOF
+        function logger (fn)
+        {
+            return function (...rest)
+            {
+                console.log('Function ',fn.name, 'called with ',rest);
+                let ret = fn(...rest);
+                console.log('Function ',fn.name, 'return ',ret);
+            }
+        }
+        const withLogger = (fn,log = console.log) => (...rest) => {
+            log('Function ',fn.name, 'called with ',rest);
+            let got = fn(...rest);
+            log('Function ',fn.name, 'return ',got);
+        }
+        let paymentWithLogger = logger(payment);
+        paymentWithLogger('Hello');
+        let anotherWithLogger = withLogger(another, console.warn);
+        anotherWithLogger('ThisIsParameterofAnother');
+    </script>
+</html>

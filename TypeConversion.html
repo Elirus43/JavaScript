@@ -1,0 +1,63 @@
+<html>
+    <script>
+
+            let obj = {
+                age: 20,
+                toString()
+                {
+                    console.log('ToString');
+                    return 'Zayar';
+                },
+                valueOf()
+                {
+                    console.log('ValueOf');
+                    return { }
+                }
+            };
+            console.log( ' " " + obj ', '' + obj);
+
+            let data = {
+                name: 'Elirus',
+                toString()
+                {
+                    console.log('ToString');
+                    return '4303';
+                }
+            };
+            console.log('Number ', + data);
+
+            let fan = {
+                Job: 'programmer',
+                toString()
+                {
+                    console.log( 'ToString');
+                    return 'coding';
+                }
+            };
+            console.log( 'Boolean ', !!fan);
+
+            let roll = {
+                start: 'FromNo1',
+                valueOf()
+                {
+                    console.log('ValueOf');
+                    return 1;
+                }
+            };
+            console.log( 'Number ', + roll);
+
+            let arr = [ ];
+            console.log('Arr ', ' ' + arr);
+            console.log('Number ', + arr);
+            console.log('+[null] ', +null);
+
+            let test = [null];
+            console.log( ' " " + test ', ' ' + test);
+            console.log('+test ', + test);
+
+            let Obj = [undefined, null];
+            console.log(' " " + Obj ', ' ' + Obj);
+            console.log(' + Obj ', + Obj);
+
+    </script>
+</html>

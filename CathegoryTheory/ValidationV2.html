@@ -1,0 +1,55 @@
+<html>
+    <script>
+
+        const Left = value => ({
+            value,
+            valueOf: () => value,
+            map(fn)
+            {
+                return Left.of(value)
+            },
+            matchWith(context)
+            {
+                return context.Left(value)
+            }
+        });
+        Left.of = Left;
+
+        const Right = value => ({
+            value,
+            valueOf: () => value,
+            map(fn)
+            {
+                return Right.of(fn(value))
+            },
+            matchWith(context)
+            {
+                return context.Right(value)
+            }
+        });
+        Right.of = Right;
+
+        const minLength = (len) => (input) => input.length >= len;
+        const maxLength = (len) => (input) => input.length <= len;
+
+        const minValue = (limit) => (value) => value >= limit;
+        const maxValue = (limit) => (value) => value <= limit;
+
+        const Email = (email) => email.includes('@');
+
+        const validName = (obj) => minLength(3)(obj.name) && maxLength(8)(obj.name);
+        const validAge = (obj) => minValue(10)(obj.age) && maxValue(80)(obj.age);
+        const validEmail = (obj) => Email(obj.email);
+
+        const And = {
+            identity: () => true,
+            binaryOp: (x, y) => x && y
+        };
+        
+        const Or = {
+            identity: () => false,
+            binaryOp: (x, y) => x || y
+        }
+
+    </script>
+</html>

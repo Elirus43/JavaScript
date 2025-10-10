@@ -1,0 +1,31 @@
+<html>
+    <script>
+
+            let a = true;
+            let b = false;
+            console.log( '!a ', !a);
+            console.log( ' ![] ', ![ ]);
+            console.log( ' !! [] ', !![]);
+
+            function process( maxWidth )
+            {
+                let width = maxWidth ?? 40;
+                console.log( 'Width ', width);
+            }
+            process( );
+            process(21);
+            process(0);
+            process(null);
+
+            let obj = {
+                name : 'Elirus',
+                age : 45,
+                address : 'Yangon',
+            }
+            delete obj.age;
+            console.log('Obj ', obj);
+            console.log('Obj.age ', obj.age);
+            console.log( 'Age in Obj ', 'age' in obj);
+            console.log( ' Name in Obj ', 'name' in obj);
+    </script>
+</html>

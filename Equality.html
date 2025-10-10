@@ -1,0 +1,41 @@
+<html>
+    <script>
+
+            console.log( ' "true == 1" ', true == 1);
+            console.log(false == 0);
+            let obj = {
+                valueOf( )
+                {
+                    return false;
+                }
+            }
+            console.log( 'Obj < 1 ', obj < 1);
+            console.log( ' "900 " > 100' , '900' > 100);
+
+            let a = 'Hello';
+            let b = 'World';
+            console.log( 'a > b ', a > b);
+
+            a = '700';
+            b = '80';
+            console.log( "a < b ", a < b);
+
+            /* The in Operator */
+
+            let str = {
+                name : 'Zayar',
+                age : 21,
+            }
+            console.log( "Name in str ", 'name' in str);
+
+            let arr = [ 10, 30, 40];
+            console.log( ' " 3 " in arr ', '3' in arr);
+
+            /* The instanceOf Operator */
+
+            console.log('str instanceOf Object ', str instanceof Object);
+            let date = new Date( );
+            console.log( 'Date instance of Date ', date instanceof Date);
+
+    </script>
+</html>

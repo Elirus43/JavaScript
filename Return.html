@@ -1,0 +1,44 @@
+<html>
+    <script>
+
+            function greet (whom)
+            {
+                console.log( 'Hello ', whom)
+            }
+            greet('Sydney Sweeney');
+            greet('Snow San');
+
+            function add ( a, b)
+            {
+                return a + b
+            }
+            let c = add ( 3,  5);
+            console.log( 'C ', c); 
+
+            function isEven(num)
+            {
+                return num % 2 == 0;
+            }
+            console.log( 'isEven ', isEven(4) );
+            console.log( 'isEven ',isEven(3) );
+
+            const isEven2 = (num) => num % 2 == 0;
+            console.log( 'isEven2 ', isEven2(6) );
+
+            const add2 = (a, b) => a + b;
+            let d = add2 (2, 4);
+            console.log( 'D ',d );
+
+            const add3 = (g, h) => {
+                console.log( 'Add3 g', g, ' h ', h);
+                return g + h
+            }
+            console.log( 'Add3 ', add3(5, 7) );
+
+            const getObj = ( ) => ({
+                name : 'Zayar',
+                age : 21,
+            });
+            console.log( 'getObj ', getObj ( ));
+    </script>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <script>
+        function display (obj)
+        {
+            let name = obj.name;
+            let age = obj.age;
+            console.log( 'Name ', name, 'Age ', age);
+        }
+        display ({
+            name : 'Zayar',
+            age : 21,
+        });
+
+        function display2 ({name, age})
+        {
+            console.log( 'Name ', name, 'Age ', age);
+        }
+        display2({
+            name : 'Elirus',
+            age : 21,
+        });
+
+        function process ( a, b)
+        {
+            if ( arguments.length < process.length)
+            {
+                console.warn( 'Function ',arguments.callee.name, ' expect ', process.length, ' but found ', arguments.length);
+            }
+            console.log( 'Function.length ', process.length, 'Arg.length ', arguments.length);
+            console.log( 'A ', a, 'B ', b);
+        }
+        process( );
+        process( 20 );
+        process ( 20, 30 );
+    </script>
+</html>

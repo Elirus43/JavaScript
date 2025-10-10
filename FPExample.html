@@ -1,0 +1,35 @@
+<html>
+    <script>
+        let students = [
+            {
+                name : 'Nwar Gyi',
+                gender : 'Male',
+                age : 21.
+            },
+            {
+                name : 'Ma Ei',
+                gender : 'Female',
+                age : 20,
+            },
+            {
+                name : 'Ko Pu',
+                gender : 'Male',
+                age : 22,
+            },
+            {
+                name : 'Chizuru',
+                gender : 'Female',
+                age : 19,
+            }
+        ];
+        let females = students.filter (student => student.gender == 'Female')
+                                          /*  .map (student => student.age)
+                                            .reduce( (a, b) => a  < b ? a : b) */
+
+                                            .reduce ( ( StudentA, StudentB) =>
+                                        {
+                                                return StudentA.age < StudentB.age ? StudentA : StudentB;
+                                        });
+        console.log( 'Females ', females);
+    </script>
+</html>

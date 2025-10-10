@@ -1,0 +1,74 @@
+<html>
+    <script>
+
+        const Left = value => ({
+            value,
+            valueOf: () => value,
+            map(fn)
+            {
+                return Left.of(value)
+            },
+            matchWith(context)
+            {
+                return context.Left(value)
+            }
+        });
+        Left.of = Left;
+
+        const Right = value => ({
+            value,
+            valueOf: () => value,
+            map(fn)
+            {
+                return Right.of(fn(value))
+            },
+            matchWith(context)
+            {
+                return context.Right(value)
+            }
+        });
+        Right.of = Right;
+  
+        let obj = {
+            name: 'elirus',
+            age: 21,
+            email: 'elirus@email.com'
+        }
+
+        const minLength = (len) => (input) => input.length >= len;
+        const maxLength = (len) => (input) => input.length <= len;
+        console.log('Min Length Elirus', minLength(3)('Elirus'));
+        console.log('Min Length Izu', minLength(5)('Izu'));
+        console.log('Max Length PiSi ', maxLength(7)('PiSi'));
+
+        const minValue = (limit) => (value) => value >= limit;
+        const maxValue = (limit) => (value) => value <= limit;
+        console.log('Min Value 20 ', minValue(20)(18));
+        console.log('Max Value 100 ', maxValue(100)(49));
+        console.log('Max Value 20 ', maxValue(20)(40));
+
+        const Email = (email) => email.includes('@');
+        console.log('Valid Email ', Email('zayarhtun4303@email.com'));
+
+        const validName = (obj) => minLength(3)(obj.name) && maxLength(8)(obj.name);
+        const validAge = (obj) => minValue(10)(obj.age) && maxValue(80)(obj.age);
+        const validEmail = (obj) => Email(obj.email);
+
+        console.log('Valid Name ',validName({
+            name: 'ElirusIsOnFire'
+        }));
+        console.log('Valid Name ', validName({
+            name: 'Elirus'
+        }));
+        console.log('Valid Age ', validAge({
+            age: 21
+        }));
+        console.log('Valid Age ', validAge({
+            age: 100
+        }));
+        console.log('Valid Email ', validEmail({
+            email: 'elirus4303@email.com'
+        }));
+
+    </script>
+</html>

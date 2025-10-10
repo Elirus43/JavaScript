@@ -1,0 +1,24 @@
+<html>
+    <script>
+
+            let a = {x : 1}, 
+            b = {y : 2, z : 3, address : {
+                city : 'YGN',
+            }};
+            for (let c in b)
+            {
+                a[c] = b[c];
+            }
+            console.log('A ', a);
+
+            let obj = {
+                x : 10,
+            }
+            let obj2 = Object.assign({
+                y : 20,
+                x : 50,
+            }, obj);
+            console.log( 'Obj2 ', obj2);
+
+    </script>
+</html>

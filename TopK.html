@@ -1,0 +1,32 @@
+<html>
+    <script>
+        let nums = [2, 2, 1, 1, 1, 2, 2, 3];
+        let freq = {};
+        for (const item of nums)
+        {
+            if(freq[item])
+            {
+                freq[item]++
+            }
+            else
+            {
+                freq[item] = 1
+            }
+        }
+       // console.log('Item ',item);
+        console.log('Freq ',freq);
+        let ObjToArr = Object.entries(freq);
+        console.log('ObjectToArray ',ObjToArr);
+
+        let sortArr = ObjToArr.sort((a, b) => b[1] - a[1]);
+        console.log('Sorted Arr ',sortArr);
+
+        let mostFrequentItems = sortArr.map(toy => toy[0]);
+        console.log('Frequent Items ',mostFrequentItems);
+
+        mostFrequentItems.length = 2;
+        console.log('Frequent Items ',mostFrequentItems);
+
+
+    </script>
+</html>

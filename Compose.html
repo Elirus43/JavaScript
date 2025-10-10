@@ -1,0 +1,23 @@
+<html>
+    <script>
+        function greet (msg)
+        {
+            return msg + ' hi'
+        }
+        function toUpper (str)
+        {
+            return str.toUpperCase()
+        }
+        console.log('toUpper(greet("hello")))',toUpper(greet("hello ")));
+
+        function compose (funcA, funcB)
+        {
+            return function(x)
+            {
+                return funcA (funcB(x));
+            }
+        }
+        let newFunc = compose(toUpper, greet);
+        console.log('newFunc ',newFunc ('morning'));
+    </script>
+</html>

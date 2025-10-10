@@ -1,0 +1,66 @@
+<html>
+    <script>
+
+        const MayBe = value => ({
+            value,
+            valueOf: () => value,
+            map(fn) {
+                return this.isNothing() ? MayBe.of(null) : MayBe.of(fn(value));
+            },
+            isNothing: () => value == undefined || value == null, 
+            OrElse(defaultValue) 
+            {
+                return this.isNothing() ? defaultValue : this;
+            }
+        });
+
+        MayBe.of = MayBe;
+
+        let employees = {
+            1: {
+                name: 'Emp1',
+
+            },
+            2: {
+                name: 'Emp2',
+                supervisor: 1,
+            },
+            3: {
+                name: 'Emp3',
+                supervisor: 2, 
+            }
+        }
+
+        function getSuperVisorName(empId) 
+        {
+            let emp = employees[empId];             //emp = 3: {name: 'Emp3', supervisor: 2}
+            if(emp)                                    //carry obj
+            {
+               let supervisorId = emp.supervisor;
+               if(supervisorId)
+               {
+                let supervisor = employees[supervisorId];
+                if(supervisor)
+                {
+                    return supervisor.name;
+                }
+               }
+            }
+        }
+        console.log('SupvisorName of 3 ',getSuperVisorName(3));
+        console.log('SupervisorName of 1 ',getSuperVisorName(1));
+        
+        function getSuperVisorNameV2(empId) 
+        {
+            return MayBe.of(empId)
+                        .map(empId => employees[empId])
+                        .map(employee => employee.supervisor)       // 2 ==> supervisorId = 2;
+                        .map(supervisorId => employees[supervisorId])
+                        .map(supervisor => supervisor.name);
+        }
+        console.log('Supervisor Name of 1 ', getSuperVisorNameV2(1));
+        console.log('Supervisor Name of 3 ', getSuperVisorNameV2(3));
+
+
+    </script>
+</html>

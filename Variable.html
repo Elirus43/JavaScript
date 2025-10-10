@@ -1,0 +1,53 @@
+<html>
+    <script>
+
+            let price = 250;
+            let quantity = 4;
+            let statement = 'Price '+price
+                                        +'\nQuantity '+quantity
+                                        +'\nTotal '+ ( price * quantity);
+            console.log(statement);
+
+            statement = `Price ${price}
+Quantity ${quantity}
+Total ${price * quantity}
+`
+            console.log(statement);
+
+            let g1 = 'HowYouDoing';
+            console.log( 'Length ', g1.length);
+            console.log( 'SubString ',g1.substring(4, 9) );
+            console.log( 'Slice ', g1.slice(3, 6) );
+            console.log( 'Slice ', g1.slice(-5) );
+            console.log( 'IndexOf ', g1.indexOf( 'o', 3) );
+            console.log( 'IndexOf ', g1.indexOf('gg') );
+            console.log( 'lastIndexOf ', g1.lastIndexOf( 'o') );
+            console.log( 'IndexOf ', g1.indexOf('Y') );
+
+            let items = 'phone, laptop, tablet, iem';
+            console.log( 'Items ', items.split( ' , ') );
+
+            let lyrics = 'YouAre, myFire';
+            console.log( 'StartWith ', lyrics.startsWith('You') );
+            console.log( 'EndWith ', lyrics.endsWith('believe') );
+            console.log( 'Includes ', lyrics.includes('my') );
+
+            let gone = 'You are my back bone';
+            console.log( 'Replace ', gone.replace( ' back', ' front') );
+            console.log( 'toUpperCase ', gone.toUpperCase() );
+            console.log( 'toLowerCase ', gone.toLowerCase() );
+
+            let str = 'OhmamaMia'
+            console.log( 'CharAt ', str.charAt(6) );
+            console.log( 'CharAt ', str.charAt(str.length - 1) );
+
+            let more = "        ItWillRain       ";
+            console.log( 'Trim >>', more.trim( ) + ' <<');
+            console.log( 'TrimStart >>', more.trimStart( ) + ' <<');
+            console.log( 'TrimEnd >>', more.trimEnd( ) + ' <<');
+
+            let a = 'hello ';
+            console.log( 'Concat ', a.concat( ', world') );
+            console.log( 'Repeat ', a.repeat(3) );
+    </script>
+</html>

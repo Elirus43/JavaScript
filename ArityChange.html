@@ -1,0 +1,8 @@
+<html>
+    <script>
+        const unary = (fn) => (arg) => fn(arg);
+        console.log('ParseInt ',parseInt('100Hello'));
+        let nums = ['100', '2', '300'].map(unary(parseInt));
+        console.log('Nums ',nums);
+    </script>
+</html>

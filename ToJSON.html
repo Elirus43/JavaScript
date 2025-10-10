@@ -1,0 +1,40 @@
+<html>
+    <script>
+
+            let person1 = {
+                name : 'Elirus',
+                memberID : 322,
+                address : {
+                    city : 'YGN',
+                    Twsp : 'ISN'
+                },
+                toJSON( )
+                {
+                    console.log('toJSON called ');
+                    return {
+                        UserName : this.name,
+                        Address : this.address
+                    }
+                },
+            };
+            let str = JSON.stringify(person1);
+            console.log( 'Str ', str);
+            let obj = JSON.parse(str);
+            console.log( 'Obj ', obj);
+
+            let name = 'Zayar';
+            let age = 32;
+            let detail = {
+                name,
+                age,
+            }
+            console.log( 'Detail ', detail);
+
+            let data = 'dynamicproperty';
+            let id = 1;
+            obj = {
+                [data+id] : 120,
+            }
+            console.log( 'Obj ', obj);
+    </script>
+</html>

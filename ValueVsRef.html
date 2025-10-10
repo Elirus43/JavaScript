@@ -1,0 +1,43 @@
+<html>
+    <script>
+
+            let a = 10;
+            let b = a;
+            b++;
+            console.log( 'B ', b);
+            console.log( 'A ', a);
+
+            let objA = {
+                name: 'Zayar',
+                age: 21,
+            }
+            let objB = objA;
+            objB.age ++;
+            console.log( ' objB.age ', objB.age);
+            console.log( 'objA.age ', objA.age);
+
+            objB = {
+                age: 25,
+            }
+            console.log( 'objB.age ', objB.age);
+            console.log( 'objA.age ', objA.age);
+
+            let one = 10;
+            let two = '20';
+            console.log(!!b);
+            console.log(!a);
+            console.log(!!a);
+
+            let z = {
+                name: 'Zayar',
+                toString( )
+                {
+                    console.log('toString');
+                    return '432003';
+                }
+            }
+            console.log( ' ' + !!z);
+
+
+    </script>
+</html>

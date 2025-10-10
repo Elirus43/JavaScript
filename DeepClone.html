@@ -1,0 +1,34 @@
+<html>
+
+    <script>
+        let obj = {
+            name : 'Zayar',
+            age : 21,
+            address : {
+                city : 'YGN',
+            },
+            x : 20, 
+        }
+        let obj2 = JSON.stringify(obj);
+        console.log('Obj2 ', obj2);
+
+        let source = JSON.parse(obj2);
+        console.log( 'Source ', source);
+        console.log( 'obj2.address === obj.address ', obj2.address === obj.address);
+
+        let pName1 = {
+            x : 20,
+        };
+        let pName2 = {
+            y :30,
+            z : 40,
+        };
+        let pName3 = {
+            ...pName1,
+            ...pName2,
+        }
+        console.log( 'pName3 ', pName3);
+
+    </script>
+
+</html>

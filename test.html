@@ -1,0 +1,24 @@
+<html>
+    <script>
+        function a ()
+        {
+            console.log('Good Job');
+            return 'super' 
+        }
+
+        function one (func)
+        {
+            return function (...para)
+            {
+                console.log('Function ',func.name, 'called with this parameter ',para);
+                let ret = func(...para);
+                console.log('Function ', func.name, 'return with ',ret);
+            };
+        };
+
+        for(let i = 0; i < 100; i++)
+        {
+            console.log(`${i}. I Love You \n`);
+        }
+    </script>
+</html>

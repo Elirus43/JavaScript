@@ -1,0 +1,26 @@
+<html>
+    <script>
+
+        let circle = {
+            radius: 4,
+            /* Old School Style
+            getArea:function( )
+            {
+                return Math.PI * this.radius * this.radius;
+            }
+            */
+           getArea( ) //Shorthand Property Modern Style
+           {
+            return Math.PI * this.radius * this.radius;
+           },
+           get area( )
+           {
+            console.log( 'getter area');
+            return Math.PI * this.radius * this.radius;
+           }
+        }; 
+        console.log( 'Circle.getArea ', circle.getArea( ));
+        console.log( 'Use getter ', circle.area);
+    
+    </script>
+</html>

@@ -1,0 +1,18 @@
+<html>
+    <script>
+        // Negating
+        let arr = [1, 2, 3, 4, 5, 6];
+        const isEven = (x) => x % 2 == 0;
+
+        function not(fn)
+        {
+            return function (x)
+            {
+                return !fn(x)
+            }
+        };
+
+        const isOdd = not(isEven);
+        console.log('Odd List ', arr.filter(isOdd));
+    </script>
+</html>

@@ -1,0 +1,17 @@
+<html>
+    <script>
+
+        let obj = {
+            name : 'Elirus',
+            age : 21,
+            display (message)
+            {
+                console.log('Greeting ', message, 'Name ', this.name, 'Age ', this.age);
+            }
+        };
+        obj.display('Hello');
+
+        let m = obj.display;
+        m.call(obj, 'Nay Kaung lar' );
+    </script>
+</html>
