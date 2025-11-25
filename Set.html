@@ -1,0 +1,38 @@
+<html>
+    <script>
+
+        let set = new Set([1, 2, 3, 1, 1, 2]);
+        console.log(set);
+        console.log("Size", set.size);
+
+        console.log("Has 2", set.has(2));
+
+        set.add(4);
+        console.log(set);
+        console.log("Size", set.size);
+
+        set.add(3);
+        console.log(set);
+
+        set.delete(2);
+        console.log(set);
+        console.log("Size", set.size);
+
+        set.clear();
+        console.log("Set", set);
+
+        let test = new Set([1, 1, 1, 3, 3, 4]);
+        console.log("Test ", test);
+
+        let array = [...test];
+        console.log("Array ",array);
+
+        test.forEach(item=>console.log("Item for each ", item));
+
+        // Array => Set => Array {Removing Duplicates}
+        let num = [5, 4, 3, 3, 2, 2, 1];
+        num = [...new Set(num)];
+        console.log("Removed Duplicated Nums", num);
+
+    </script>
+</html>

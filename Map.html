@@ -1,0 +1,38 @@
+<html>
+    <script>
+        
+        let id = new Map([
+            [1, "Naruto"],
+            [2, "Sasuke"],
+            [3, "Kakashi"]
+        ]);
+        console.log("ID ",id);
+        console.log("Size ", id.size);
+        console.log("Has 3 ", id.has(3));
+
+        id.set(4, "Minato");
+        id.set("5", "Madara");
+        console.log("ID ",id);
+        console.log("Size ", id.size);
+
+        // override
+        id.set(1, "SageMode");
+        console.log("ID ", id);
+        
+        console.log("Get 4 ", id.get(4));
+
+        console.log("Delete 5 ",id.delete("5"));
+        console.log("ID ",id);
+        console.log("Size ", id.size);
+
+        for(const[key,value] of id) {
+            console.log("Key ",key, "Value ",value);
+        }
+
+        console.log("Keys ",id.keys());
+        console.log("Values ", id.values());
+        console.log("Entries ", id.entries());
+
+
+    </script>
+</html>
