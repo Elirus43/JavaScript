@@ -1,0 +1,44 @@
+<html>
+    <script>
+
+        let pattern;
+
+        //  \s white space
+
+        pattern = /^\s+$/;
+        console.log(`Pattern ${pattern}     `,pattern.test('    '));
+        console.log(`Pattern ${pattern} 123`,pattern.test('123'));
+
+        // \S non-white space
+
+        pattern = /^\S+$/;
+        console.log(`Pattern ${pattern}     `,pattern.test('    '));
+        console.log(`Pattern ${pattern} 123`,pattern.test('123'));
+
+
+        //  \d digit
+        pattern = /^\d{2,4}$/;
+        console.log(`Pattern ${pattern} 123 `,pattern.test('123'));
+        console.log(`Pattern ${pattern} 12345 `,pattern.test('12345'));
+        console.log(`Pattern ${pattern} ABC `,pattern.test('ABC'));
+
+        //  \D non-digit
+        pattern = /^\D{2,6}$/;
+        console.log(`Pattern ${pattern} 12345 `,pattern.test('12345'));
+        console.log(`Pattern ${pattern} Zayar `,pattern.test('Zayar'));
+        console.log(`Pattern ${pattern} $# `,pattern.test('$#'));
+
+
+
+        console.log(`"JavaScript".search(/script/ui) `,"JavaScript".search(/script/ui));
+
+        let str = "javascript programming language";
+        str = str.replace(/javascript/gi, "JavaScript");
+        console.log("Str ",str);
+
+        console.log('Match ', "7 plus 5 equal to 12".match(/\d+/g));
+
+
+
+    </script>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <script>
+        // . dot meaning
+        let pattern = /^[0-9]+.+$/;
+        console.log("Pattern ",pattern.test('123ABC'));
+        console.log("Pattern ",pattern.test('123'));
+
+        // * meaning
+        pattern = /^a*b*$/;
+        console.log("Pattern Test aaab ",pattern.test('aaab'));
+        console.log("Pattern Test b ",pattern.test('b'));
+        console.log("Pattern Test bc ",pattern.test('bc'));     //c doesn't include, ending with $
+
+        // + meaning +1
+        pattern = /^[0-9]+$/;
+        console.log(`Pattern ${pattern} 1234 `,pattern.test('1234'));
+        console.log(`Pattern ${pattern} 1234ABC `,pattern.test('1234ABC'));
+        console.log(`Pattern ${pattern} 11134 `,pattern.test('11134'));
+
+        pattern = /[0-9]+$/;
+        console.log(`Pattern ${pattern} ABC123 `,pattern.test('ABC123')); //not exact match
+
+        // ? meaning 1 or 0
+        pattern = /^a?b?$/;
+        console.log(`Pattern ${pattern} ab `,pattern.test('ab'));
+        console.log(`Pattern ${pattern} a `,pattern.test('a'));
+        console.log(`Pattern ${pattern} aab `,pattern.test('aab')); // more than 1
+
+        // () meaning group 
+        pattern = /^(ab)+$/;
+        console.log(`Pattern ${pattern} abababab `,pattern.test('abababab'));
+        console.log(`Pattern ${pattern} ab `,pattern.test('ab'));
+        console.log(`Pattern ${pattern} aba `,pattern.test('aba'));
+        console.log(`Pattern ${pattern} aab `,pattern.test('aab'));
+
+        // OR meaning
+        pattern = /^([a-z]|[A-Z])+$/;
+        console.log(`Pattern ${pattern} abc `,pattern.test('abc'));
+        console.log(`Pattern ${pattern} aBc `,pattern.test('aBc'));
+        console.log(`Pattern ${pattern} ABC `,pattern.test('ABC'));
+        console.log(`Pattern ${pattern} abc123 `,pattern.test('abc123'));
+
+        
+
+
+    </script>
+</html>

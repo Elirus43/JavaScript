@@ -1,0 +1,25 @@
+<html>
+    <script>
+
+        let url = /(\w+):\/\/([\w.]+)\/(\S*)/;
+        let text = "Visit my website at http://google.com/~elirus";
+        let match = text.match(url);
+        let fullurl, protocol, host, path;
+        if(match !== null) {
+            fullurl = match[0];
+            protocol = match[1];
+            host = match[2];
+            path = match[3];
+        }
+        console.log("Match ",match);
+        console.log("Full_URL ",fullurl);
+        console.log("Protocol ",protocol);
+        console.log("Host ",host);
+
+        // split -> string to array 
+        let str = "Liverpool; Arsenal; Real";
+        let result = str.split(";");
+        console.log("Result ", result);
+
+    </script>
+</html>

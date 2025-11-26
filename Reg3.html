@@ -1,0 +1,44 @@
+<html>
+    <script>
+
+        // {} meaning exact numbers
+        pattern = /^[0-9]{5}$/;
+        console.log(`Pattern ${pattern} 12345 `,pattern.test('12345'));
+        console.log(`Pattern ${pattern} 123 `,pattern.test('123'));
+        console.log(`Pattern ${pattern} 11122 `,pattern.test('11122'));
+
+        pattern = /^[0-9]{6,}$/;
+        console.log(`Pattern ${pattern} 12345 `, pattern.test('12345'));
+        console.log(`Pattern ${pattern} 112233 `,pattern.test('112233'));
+        console.log(`Pattern ${pattern} 11223344 `,pattern.test('11223344'));
+
+        pattern = /^[0-9]{3,6}$/;
+        console.log(`Pattern ${pattern} 43 `,pattern.test('43'));       //below min
+        console.log(`Pattern ${pattern} 23456`,pattern.test('23456'));      //within min & max
+        console.log(`Pattern ${pattern} 23456789`,pattern.test('23456789'));        //over maximun
+
+        // Character classes
+        // ^ meaning in the bracket (not)
+
+        pattern = /^[^0-9]+$/;
+        console.log(`Pattern ${pattern} abc `,pattern.test('abc'));
+        console.log(`Pattern ${pattern} 123 `,pattern.test('123'));
+
+
+        // \w meaning ANY ASCII Character
+        pattern = /^\w+$/;
+        console.log(`Pattern ${pattern} Abc `,pattern.test('Abc'));
+        console.log(`Pattern ${pattern} 123 `,pattern.test('123'));
+        console.log(`Pattern ${pattern} Abc+ `,pattern.test('Abc+'));
+
+        // \W meaning NOT ASCII character 
+        pattern = /^\W+$/;
+        console.log(`Pattern ${pattern} Abc `,pattern.test('Abc'));
+        console.log(`Pattern ${pattern} 123 `,pattern.test('123'));
+        console.log(`Pattern ${pattern} $#+ `,pattern.test('$# +'));
+
+        //  \w is word 
+        //  \W is non-word
+
+    </script>
+</html>
