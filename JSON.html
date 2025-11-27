@@ -1,0 +1,51 @@
+<html>
+    <script>
+
+        let user = {
+            name: "Elirus",
+            age: 22,
+            address: {
+                city: "Yangon",
+                street: "B-5 Street"
+            },
+            nums: [1,2,3,4,5,6],
+            job() 
+            {
+                console.log(this.name + " is ")
+            },
+            toJSON()    // If toJSON method exist, JSON.stringify() will call that method and use its return value.
+            {
+                console.log("toJSON called");
+                return {
+                    username: this.name,
+                    age: this.age
+                }
+            }
+        };
+
+        let str = JSON.stringify(user);
+        console.log("Stringify ", str);
+
+        // Normal Parse
+        // let obj1 = JSON.parse(str);
+        // console.log("Obj1 ",obj1)
+
+        // Custom Parse 
+        let obj = JSON.parse(str, function(key, value) {
+            if(typeof value === "string")
+        {
+            return value.toUpperCase();
+        }
+            return value;
+        });
+        console.log("OBJ ",obj);
+
+        // JSON stringify -> Serialization, Marshaling, Pickling OBJ -> String
+        // JSON parsing -> Deserialization, Unmarshaling, Unpickling String -> OBJ
+        // Best practice, make sever side and client side both same format (Don't transform)
+
+        
+
+
+    </script>
+</html>
