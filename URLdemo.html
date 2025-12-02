@@ -1,0 +1,17 @@
+<html>
+    <script>
+
+        let url = new URL("https://example.com:8080/path/name?query=string#hash");
+        console.log("Full URL:", url);
+
+        // URL with spaces encoded as %20 -> % is hexa, hexa20 is 32 in decimal, which is the ASCII code for space
+        let url1 = new URL("https://example.com:8080/this is path/name?query=string#hash");
+        console.log("Full URL:", url1);
+
+        // EncodeURI & DecodeURI
+        let str = "https://www.google.com/this is path";
+        let encodedStr = encodeURI(str);
+        console.log("Encoded URI: ", encodedStr);
+        console.log("Decoded URI: ", decodeURI(encodedStr))
+    </script>
+</html>

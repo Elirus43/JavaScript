@@ -1,0 +1,19 @@
+<html>
+    <script>
+        // when use Generator, function must included *
+        // Generator return Iterator
+
+        function* range(end)
+        {
+            for(let i = 0; i < end; i++)
+            {
+                yield i;
+            }
+        }
+
+        for(const num of range(5))
+        {
+            console.log("Num ", num);   
+        }
+    </script>
+</html>
