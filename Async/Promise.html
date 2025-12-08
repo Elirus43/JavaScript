@@ -1,0 +1,36 @@
+<html>
+    <button type="button" id="btnProcess">Process</button>
+    <script>
+        /* Promise.resolve(100) // Success, Reject(Error)
+                .then(data => console.log("Success ",data)), err => console.log("Error ",err);
+
+        Promise.reject(new Error("Something went wrong"))   // Error
+                .then(data => console.log("Success ",data)), err => console.log("Error ",err);
+        */
+
+        /* Promise.resolve(100)
+               .then(x => x * 2)
+               .then(x => console.log("X ", x));
+        */ 
+
+        /* Promise.reject(100)
+                .then(x => x * 2)
+                .then(x => console.log("X ", x)) // Without error handler 
+                .catch(e => console.log("Error ", e)); // With error handler
+        */
+
+        /* Promise.reject(100)
+                .then(x => x * 2, err => err + 1)   // Err modified -> Become Success
+                .then(x => console.log("X ", x))
+                .catch(e => console.log("Error ", e));
+        */ 
+
+        Promise.resolve(20)
+                .then(x => {
+                    return Promise.reject(x + 1)
+                }, err => 1)
+                .then(x => x + 50, err => err + 1)
+                .then(x => console.log("X ", x))
+                .catch(e => console.log("Error ", e));
+    </script>
+</html>
