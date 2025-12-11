@@ -1,0 +1,25 @@
+<html>
+    <script>
+
+        let obj = {
+            name: "Elirus",
+            age: 22,
+            address: "Yangon"
+        };
+
+        console.log("PropDescripter ", Object.getOwnPropertyDescriptor(obj, 'name'));   // we got value, writable, configurable, enumerable
+
+        Object.defineProperty(obj, "job", {
+            value: "Software Engineer",
+            configurable: false,
+            writable: false
+        });
+
+        console.log("Object ", obj);
+        obj.job = "Network Engineer";   //Since configurable & writable are false, you can't do nothing
+        delete obj.job;
+
+        console.log("Object ", obj);
+
+    </script>
+</html>

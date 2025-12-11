@@ -1,0 +1,46 @@
+<html>
+    <script>
+
+        let obj = {
+            name: "Arkar Hein",
+            age: 25,
+            address: ""
+        };
+
+        let anotherObj = {
+            title: "",
+            company: "Tech Co."
+        }
+
+        /* function checkEmpty(obj)
+        {
+            if(obj.name === '')
+            {
+                console.warn("Name is empty");
+            }
+            if(obj.address === '')
+            {
+                console.warn("Address is empty");
+            }
+        }
+        */
+
+        // Metaprogramming approach
+        function checkEmpty(obj)
+        {
+            for(let prop in obj)
+            {
+                if(typeof obj[prop] === 'string')
+                {
+                    if(obj[prop] === '')
+                    {
+                        console.warn(prop + " is empty");
+                    }
+                }
+            }
+        }
+
+        // checkEmpty(obj);
+        checkEmpty(anotherObj);
+    </script>
+</html>

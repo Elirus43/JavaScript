@@ -1,0 +1,39 @@
+<html>
+  <div>
+    Name: <small id="name"></small>
+    <br />
+    Age: <small id="age"></small>
+  </div>
+  <script>
+    //  document.getElementById('name').innerText = "Elirus";
+
+    let model = {
+      name: "Someone",
+      age: 20,
+    };
+
+    function bindView(obj) {
+      document.getElementById("name").innerText = obj.name;
+      document.getElementById("age").innerText = obj.age;
+    }
+
+    bindView(model);
+
+    function mvc(model, updateView) {
+      let proxy = {};
+      for (let prop in model) {
+        Object.defineProperty(proxy, prop, {
+          set(newValue) {
+            model[prop] = newValue;
+            updateView(model);
+          },
+        });
+      }
+      return proxy;
+    }
+
+    let pro = mvc(model, bindView);
+    pro.name = "Elirus";
+    pro.age = 22;
+  </script>
+</html>

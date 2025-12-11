@@ -1,0 +1,31 @@
+<html>
+    <script>
+
+        async function getData(urls)
+        {
+            let promises = urls.map(url => fetch(url)
+                                        .then(res => res.json()));
+            for(const p of promises)
+            {
+                let json = await p;
+                console.log("JSON ", json);
+            }
+        }
+        let urls = ['https://jsonplaceholder.typicode.com/todos/1','https://jsonplaceholder.typicode.com/todos/2'];
+        getData(urls);
+
+        // For Await
+        async function getDataForAwait(urls)
+        {
+            let promises = urls.map(url => fetch(url)
+                                .then(res => res.json()));
+            for await (const json of promises)
+            {
+                console.log("JSON ", json)
+            }
+        }
+        let urls2 = ['https://jsonplaceholder.typicode.com/todos/3','https://jsonplaceholder.typicode.com/todos/4'];
+
+
+    </script>
+</html>

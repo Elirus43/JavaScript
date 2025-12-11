@@ -1,0 +1,25 @@
+<html>
+    <script>
+
+        // Async func returning promise without await
+        async function getData(x)
+        {
+            return x * 2;
+        }
+        getData(5).then(x => console.log("X is ", x));  // We can use .then bcuz async func returns promise
+
+
+        function getPromise()   // normal func return promise
+        {
+            return Promise.resolve(200);
+        }
+
+        async function waitPromise()
+        {
+            let result = await getPromise();
+            console.log("Result is ", result);
+        }
+
+        waitPromise();
+    </script>
+</html>
