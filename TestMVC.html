@@ -1,0 +1,36 @@
+<html>
+  <div>
+    Username: <strong id="name"></strong>
+    <br />
+    Password: <strong id="password"></strong>
+  </div>
+
+  <script>
+    let user1 = {
+      name: "Gr8Elirus",
+      pw: "Elirus4303",
+    };
+
+    function bindTogether(obj) {
+      document.getElementById("name").innerText = obj.name;
+      document.getElementById("password").innerText = obj.pw;
+    }
+
+    function mvc(obj, updateBind) {
+      let proxy = {};
+      for (let prop in obj) {
+        Object.defineProperty(proxy, prop, {
+          set(newValue) {
+            obj[prop] = newValue;
+            updateBind(obj);
+          },
+        });
+      }
+      return proxy;
+    }
+
+    let updateUser = mvc(user1, bindTogether);
+    updateUser.name = "Admin";
+    updateUser.pw = "Elirus@4303";
+  </script>
+</html>
