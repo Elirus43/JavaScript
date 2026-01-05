@@ -1,0 +1,19 @@
+<html>
+    <script>
+        let parentObj = {
+            x : 100,
+        };
+
+        let obj = Object.create(parentObj);
+        console.log("Obj.x ", obj.x);
+        console.log("Object getPrototypeOf ", Object.getPrototypeOf(obj) );;
+
+        let another = {
+            x : 200,
+        };
+        Object.setPrototypeOf(obj, another);    // change prototype
+        console.log("Obj.x after setPrototypeOf ", obj.x);
+        console.log("Object getPrototypeOf ", Object.getPrototypeOf(obj) );;
+
+    </script>
+</html>

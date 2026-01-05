@@ -1,0 +1,32 @@
+<html>
+    <script>
+        let module = {
+            method1()
+            {
+                console.log("Method 1");
+            },
+            method2()
+            {
+                console.log("Method 2");
+            }
+        }
+
+        let logHandler = {
+            get(target, prop, receiver) {
+                if(typeof target[prop] === "function")
+                {
+                    console.log("Method ", prop, "called");
+                    let ret = target[prop];
+                    return ret;
+                } 
+                else {
+                    return target[prop];
+                }
+            },
+        }
+        let proxy = new Proxy(module, logHandler);
+
+        proxy.method1();
+        proxy.method2();
+    </script>
+</html>

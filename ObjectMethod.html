@@ -1,0 +1,25 @@
+<html>
+    <script>
+        let model = {
+            name: "PiSi",
+            age: 2
+        };
+
+        Object.seal(model);  // Prevent adding or removing properties
+        console.log("isSealed ", Object.isSealed(model));
+
+        model.color = "golden";
+        console.log("Model ", model);  // color property won't be added
+
+        delete model.age;
+        console.log("Model after delete age ", model);  // age property won't be deleted
+
+        model.name = "LittleOne";
+        console.log("Model after changing name ", model);  // name property will be changed
+
+        Object.freeze(model);  // Prevent changing existing properties
+        console.log("isFrozen ", Object.isFrozen(model));
+        model.name = "NewName";
+        console.log("Model after trying to change name ", model);  // name property won't be changed
+    </script>
+</html>
