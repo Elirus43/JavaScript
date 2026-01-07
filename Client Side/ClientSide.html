@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <h1>Client Side Scripting</h1>
+    <h3 id="clock"></h3>
+  </body>
+
+  <script>
+    console.log("Script 1");
+
+    let clock = document.getElementById("clock");
+    console.log("Clock ", clock);
+
+    setInterval(() => {
+      clock.innerText = new Date().toLocaleTimeString();
+    }, 1000);
+  </script>
+</html>
