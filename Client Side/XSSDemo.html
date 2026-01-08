@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <h1>Hello</h1>
+    </body>
+
+    <script>
+        let name = new URL(document.URL).searchParams.get("name");
+        console.log('Name ', name);
+        document.querySelector('h1').innerHTML = 'Hello ' + name;
+    </script>
+    
+</html>
