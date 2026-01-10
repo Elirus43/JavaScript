@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <button type="button" onclick="alert('Button Clicked')">Click</button>
+    </body>
+    <script>
+        window.onload = function() {
+            console.log("Onload");
+        }
+        document.onclick = function(event) {
+            console.log("Document Clicked ", event)
+        }
+        document.addEventListener('click', (event) => {
+            console.log('Doc click Listener 1 ', event);
+        });
+        document.onclick = function(event) {
+            console.log("Document Clicked 2 ", event)
+        };
+        document.addEventListener('click', (event) => {
+            console.log('Doc click Listener 2 ', event);
+        });
+        document.addEventListener('click', (event) => {
+            console.log('Doc click Listener 3 ', event);
+        });
+
+
+    </script>
+</html>
