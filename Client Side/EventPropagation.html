@@ -1,0 +1,51 @@
+<html>
+    <style>
+        #parent {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            padding: 20px;
+        }
+
+        #child {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            margin-top: 20px;
+        }
+    </style>
+    <body>
+        
+        <div id="parent">
+            Parent
+            <div id="child">
+                Child
+            </div>
+        </div>
+
+    </body>
+    <script>
+        // Bubbling Phase Event Listeners
+
+        document.addEventListener('click', (event) => {
+            console.log("Document Clicked ", event);
+        });
+
+        document.getElementById('parent').addEventListener('click', (event) => {
+            console.log("Parent Clicked ", event);
+        });
+
+        document.getElementById('parent').addEventListener('click', (event) => {
+            console.log("Parent Clicked 2 ", event)
+        });
+
+        document.getElementById('child').addEventListener('click', (event) => {
+            console.log("Child Clicked ", event);
+        });
+
+        document.getElementById('child').addEventListener('click', (event) => {
+            console.log("Child Clicked 2 ", event)
+        })
+
+    </script>
+</html>
