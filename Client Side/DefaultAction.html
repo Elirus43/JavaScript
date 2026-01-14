@@ -1,11 +1,23 @@
 <html>
-    <body>
-        <a href="https://www.google.com" id="lnkGoogle">Google</a>
-    </body>
+  <body>
+    <a href="https://www.google.com" id="lnkGoogle">Google</a>
+  </body>
 
-    <script>
-        document.getElementById('lnkGoogle').addEventListener('click', (event) => {
-            alert("Link clicked");
-        })
-    </script>
+  <script>
+    document.getElementById("lnkGoogle").addEventListener("click", (event) => {
+      alert("Link clicked");
+      event.preventDefault(); // Prevent the default action of navigating to Google
+    });
+
+    document.addEventListener(
+      "contextmenu",
+      (event) => {
+        console.log("Right click");
+        event.preventDefault();
+      },
+      {
+        passive: true, // Indicate that the event listener will not call preventDefault
+      }
+    );
+  </script>
 </html>

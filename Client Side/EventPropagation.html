@@ -1,51 +1,51 @@
 <html>
-    <style>
-        #parent {
-            width: 200px;
-            height: 200px;
-            background-color: lightblue;
-            padding: 20px;
-        }
+  <style>
+    #parent {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+      padding: 20px;
+    }
 
-        #child {
-            width: 100px;
-            height: 100px;
-            background-color: lightcoral;
-            margin-top: 20px;
-        }
-    </style>
-    <body>
-        
-        <div id="parent">
-            Parent
-            <div id="child">
-                Child
-            </div>
-        </div>
+    #child {
+      width: 100px;
+      height: 100px;
+      background-color: lightcoral;
+      margin-top: 20px;
+    }
+  </style>
+  <body>
+    <div id="parent">
+      Parent
+      <div id="child">Child</div>
+    </div>
+  </body>
+  <script>
+    // Bubbling Phase Event Listeners
 
-    </body>
-    <script>
-        // Bubbling Phase Event Listeners
+    document.addEventListener("click", (event) => {
+      console.log("Document Clicked ", event);
+    });
 
-        document.addEventListener('click', (event) => {
-            console.log("Document Clicked ", event);
-        });
+    document.getElementById("parent").addEventListener("click", function (event) {
+        console.log("This ", this);
+      console.log("Parent Clicked ", event);
+      console.log("Parent click event.target ", event.target);  // Get DOM element that triggered the event
+      console.log('Parent click isOwn ', event.target == this);
+    });
 
-        document.getElementById('parent').addEventListener('click', (event) => {
-            console.log("Parent Clicked ", event);
-        });
+    document.getElementById("parent").addEventListener("click", (event) => {
+      console.log("Parent Clicked 2 ", event);
+      console.log('Parent Click 2 isOwn ', event.target == event.currentTarget);
+    });
 
-        document.getElementById('parent').addEventListener('click', (event) => {
-            console.log("Parent Clicked 2 ", event)
-        });
+    document.getElementById("child").addEventListener("click", (event) => {
+      console.log("Child Clicked ", event);
+      console.log('Child click isOwn ', event.target == this);
+    });
 
-        document.getElementById('child').addEventListener('click', (event) => {
-            console.log("Child Clicked ", event);
-        });
-
-        document.getElementById('child').addEventListener('click', (event) => {
-            console.log("Child Clicked 2 ", event)
-        })
-
-    </script>
+    document.getElementById("child").addEventListener("click", (event) => {
+      console.log("Child Clicked 2 ", event);
+    });
+  </script>
 </html>
